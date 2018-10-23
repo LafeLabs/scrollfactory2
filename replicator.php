@@ -12,6 +12,7 @@
     mkdir("markdown");
     mkdir("jupyter");
     mkdir("symbol");
+    mkdir("icons");
     
     foreach($dna as $dirs){
         mkdir($dirs->path);
