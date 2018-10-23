@@ -54,7 +54,7 @@ body{
 }
     #editor{
         position:absolute;
-        left:0px;
+        left:10px;
         top:110px;
         width:40%;
         bottom:0px;
