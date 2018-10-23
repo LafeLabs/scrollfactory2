@@ -1,9 +1,7 @@
  <!doctype html>
 <html>
 <head>
- <!-- 
-PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
-
+    <!--
 EVERYTHING IS PHYSICAL
 EVERYTHING IS FRACTAL
 EVERYTHING IS RECURSIVE
@@ -14,38 +12,84 @@ EGO DEATH:
     LOOK TO THE INSECTS
     LOOK TO THE FUNGI
     LANGUAGE IS HOW THE MIND PARSES REALITY
+
+ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
 -->
-<!--Stop Google:-->
+    
+    <!--Stop Google:-->
 <META NAME="robots" CONTENT="noindex,nofollow">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
-<title>PHP Editor replicator</title>
 </head>
 <body>
+    
 <div id = "linkscroll">
     <a href = "text2php.php">text2php.php</a>
-    <a href = "dnagenerator.php">dnagenerator.php</a>    
     <a href = "index.php">index.php</a>
+    <a href = "tree.php">tree.php</a>
+    <a href = "svgfeed.php">svgfeed.php</a>
+    <a href = "svg2markdown.php">svg2markdown.php</a>
+    <a href = "shapetableeditor.php">shapetableeditor.php</a>
+    <a href = "keyboardeditor.php">keyboardeditor.php</a>
+    <a href = "stylejsoneditor.php">stylejsoneditor.php</a>
+    <a href = "vieweditor.php">vieweditor.php</a>
+    
+
+    <a href = "treednagenerator.php">treednagenerator.php</a>
+    <a href = "dnagenerator.php">dnagenerator.php</a>
+    
 </div>
 <div id = "namediv"></div>
 <div id="maineditor" contenteditable="true" spellcheck="false"></div>
-<div id = "filescroll">
 
-    <div class = "html file">html/index.txt</div>
-    <div class = "php file">php/index.txt</div>
-    <div class = "php file">php/replicator.txt</div>
-    <div class = "php file">php/dnagenerator.txt</div>
+<div id = "filescroll">
+    <div class = "html file">html/page.txt</div>
+
+    <div class = "css file">css/style.txt</div>
+
+    <div class = "bytecode file">bytecode/baseshapes.txt</div>
+    <div class = "bytecode file">bytecode/shapetable.txt</div>
+    <div class = "bytecode file">bytecode/font.txt</div>
+    <div class = "bytecode file">bytecode/keyboard.txt</div>
+    <div class = "bytecode file">bytecode/symbolkeyboard.txt</div>
+    <div class = "bytecode file">bytecode/symbols013xx.txt</div>
+    <div class = "bytecode file">bytecode/symbols010xx.txt</div>
+
+    <div class = "javascript file">javascript/topfunctions.txt</div>
+    <div class = "javascript file">javascript/actions0xx.txt</div>
+    <div class = "javascript file">javascript/actions03xx.txt</div>
+    <div class = "javascript file">javascript/init.txt</div>
+    <div class = "javascript file">javascript/redraw.txt</div>
+    <div class = "javascript file">javascript/pageevents.txt</div>
+
     <div class = "php file">php/editor.txt</div>
+    <div class = "php file">php/index.txt</div>
     <div class = "php file">php/filesaver.txt</div>
     <div class = "php file">php/fileloader.txt</div>
+    <div class = "php file">php/feedsaver.txt</div>
     <div class = "php file">php/text2php.txt</div>
+    <div class = "php file">php/shapetableeditor.txt</div>
+    <div class = "php file">php/keyboardeditor.txt</div>
+    <div class = "php file">php/stylejsoneditor.txt</div>
+    <div class = "php file">php/vieweditor.txt</div>
+    <div class = "php file">php/svgfeed.txt</div>
+    <div class = "php file">php/svg2markdown.txt</div>    
+    <div class = "php file">php/tree.txt</div>
+    <div class = "php file">php/newdir.txt</div>
+    <div class = "php file">php/treednagenerator.txt</div>
+    <div class = "php file">php/treereplicator.txt</div>
+    <div class = "php file">php/dnagenerator.txt</div>
+    <div class = "php file">php/replicator.txt</div>
 
-    <div class = "php file">symbol/replicator.php</div>
-
+    <div class = "json file">json/currentjson.txt</div>
+    <div class = "json file">json/stylejson.txt</div>
+    <div class = "json file">json/treedna.txt</div>
     <div class = "json file">json/dna.txt</div>
+    <div class = "json file">json/softkeys.txt</div>
+
 </div>
 
 <script>
-currentFile = "html/index.txt";
+currentFile = "html/page.txt";
 var httpc = new XMLHttpRequest();
 httpc.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -199,7 +243,7 @@ body{
     border-width:3px;
     background-color:#101010;
     font-family:courier;
-    font-size:22px;
+    font-size:18px;
 }
 #linkscroll{
     position:absolute;
@@ -213,7 +257,8 @@ body{
     border-width:3px;
     background-color:#101010;
     font-family:courier;
-    font-size:22px;
+    font-size:18px;
+    
 }
 #maineditor{
     position:absolute;
@@ -221,7 +266,6 @@ body{
     top:5em;
     bottom:1em;
     right:30%;
-    font-size:22px;
 }
 
 

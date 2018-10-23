@@ -28,5 +28,11 @@
 		"files":[
 			"scroll.txt"
 		]
-	}
+	},
+    {
+        "path":"symbol",
+        "files":[
+            "replicator.php"
+        ]
+    }
 ]

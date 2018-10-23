@@ -27,6 +27,8 @@ $finalstring .= ",\n";
 $finalstring .= getfiles("json");
 $finalstring .= ",\n";
 $finalstring .= getfiles("markdown");
+$finalstring .= ",\n";
+$finalstring .= "    {\n        \"path\":\"symbol\",\n        \"files\":[\n            \"replicator.php\"\n        ]\n    }";
 
 $finalstring .= "\n]";
 

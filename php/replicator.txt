@@ -10,7 +10,9 @@
     mkdir("php");
     mkdir("json");
     mkdir("markdown");
-
+    mkdir("jupyter");
+    mkdir("symbol");
+    
     foreach($dna as $dirs){
         mkdir($dirs->path);
         $files = $dirs->files;

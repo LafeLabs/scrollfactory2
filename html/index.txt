@@ -4,6 +4,9 @@
         <td><a href = "editor.php">
             <img style = "width:80px;" src = "icons/editor.svg"/>
         </a></td>
+        <td><a href = "symbol/">
+            <img style = "width:80px;" src = "icons/symbol.svg"/>
+        </a></td>
     </tr>
 </table>
 </div>
