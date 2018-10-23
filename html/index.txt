@@ -1,0 +1,90 @@
+<div id = "navbar">
+<table>
+    <tr>
+        <td><a href = "editor.php">
+            <img style = "width:80px;" src = "icons/editor.svg"/>
+        </a></td>
+    </tr>
+</table>
+</div>
+<textarea id = "editor"></textarea>
+<div id = "scroll"></div>
+<script>
+
+document.getElementById("editor").style.width = 0.45*innerWidth.toString() + "px";
+                
+document.getElementById("editor").style.height = (innerHeight - 110).toString() + "px";
+var converter = new showdown.Converter();
+
+currentFile = "markdown/scroll.txt";
+var httpc = new XMLHttpRequest();
+httpc.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        filedata = this.responseText;
+        document.getElementById("editor").value = filedata;
+        document.getElementById("scroll").innerHTML = converter.makeHtml(filedata);
+        MathJax.Hub.Typeset();//tell Mathjax to update the math
+
+    }
+};
+httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+httpc.send();
+
+
+document.getElementById("editor").onkeyup = function(){
+    document.getElementById("scroll").innerHTML = converter.makeHtml(this.value);
+    MathJax.Hub.Typeset();//tell Mathjax to update the math
+    currentFile = "markdown/scroll.txt";
+    data = encodeURIComponent(this.value);
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
+    
+}
+    
+</script>
+<style>
+body{
+    overflow:hidden;
+}
+    #editor{
+        position:absolute;
+        left:0px;
+        top:110px;
+        width:40%;
+        bottom:0px;
+    }
+    #scroll{
+        position:absolute;
+        right:0px;
+        width:50%;
+        top:100px;
+        bottom:0px;
+        overflow:scroll;
+        border:solid;
+        border-radius:10px;
+        padding:1em 1em 1em 1em;
+    }
+    #scroll img{
+        display:block;
+        margin:auto;
+    }
+    h1,h2,h3,h4,h5{
+        width:100%;
+        text-align:center;
+    }
+    #navbar{
+        position:absolute;
+        top:0px;
+        left:0px;
+        right:0px;
+        height:0px;
+    }
+    #linktable{
+        position:absolute;
+        left:0px;
+        top:0px;
+    }
+</style>
