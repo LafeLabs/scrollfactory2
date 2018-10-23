@@ -9,6 +9,7 @@
     mkdir("html");
     mkdir("php");
     mkdir("json");
+    mkdir("markdown");
 
     foreach($dna as $dirs){
         mkdir($dirs->path);

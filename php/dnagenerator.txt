@@ -25,6 +25,8 @@ $finalstring .= ",\n";
 $finalstring .= getfiles("html");
 $finalstring .= ",\n";
 $finalstring .= getfiles("json");
+$finalstring .= ",\n";
+$finalstring .= getfiles("markdown");
 
 $finalstring .= "\n]";
 
